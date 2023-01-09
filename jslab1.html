@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width ,initial-scale = 1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	<title>simple calculator</title>
+	<script type="text/javascript">
+	function calc() 
+	{
+			var x = parseInt(document.getElementById('value1').value);
+			var y = parseInt(document.getElementById('value2').value);
+			var opr = document.getElementById("operator").value;
+			
+		if (opr === "add")
+		{
+			document.getElementById('result').value=x+y;
+		}
+		if (opr === "min"){
+			document.getElementById('result').value=x-y;
+		}
+		if (opr === "mul"){
+			document.getElementById('result').value=x*y;
+		}
+		if (opr === "div"){
+			document.getElementById('result').value=x/y;
+		}
+	}
+	</script>
+</head>
+<body>
+	<h2><u>Simple calculator</u></h2><br>
+ <form>
+ 	<label for="value1">First no:</label>
+ 	<input type="text" id="value1"><br><br>
+ 	<label for="value">Second no:</label>
+ 	<input type="text" id="value2"><br><br>
+ 	<label for="operator">Operators:</label>
+ 	<select id="operator">
+ 		<option value="add">+</option>
+ 		<option value="min">-</option>
+ 		<option value="mul">*</option>
+ 		<option value="div">/</option>
+ 	</select>
+ 	
+ 		<button type="button" onclick="calc()">Calculate</button><br><br>
+ 		<label for="result">Result:</label>
+ 	   <input type="text" id="result"/>
+ </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name ="viewport" content="width=device-width,initial-scale=1.0">
+	<title>validation form</title>
+	<script type="text/javascript">
+	function validateName(){
+		var name = document.getElementById("name").value;
+
+		if (name == "") {
+             alert("Name must be filled out");
+               
+                      }
+		if(name.length < 3){
+			alert("Name should be minimum 3 charcter");
+		}
+		if (!/^[a-zA-Z]+$/.test(name)) {
+			alert("Name should not contain any numbers");
+		}
+		
+
+
+		
+	}
+
+	function validateEmail(){
+		var email = document.getElementById("email").value;
+
+		if (email == "") {
+             alert("Email must be filled out");
+              
+                      }
+		if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+			alert("Email should be in valid format");
+		}
+    }
+
+    function validatePhone(){
+    	var phone = document.getElementById("phone").value;
+
+    	if (phone == "") {
+             alert("Phone must be filled out");
+              
+                      }
+    	if(phone.length < 10){
+    		alert("Phone no: should be minimum 10 numbers");
+    	}
+    }
+
+    function validatePassword(){
+    	var password = document.getElementById("password").value;
+
+    	if (password == "") {
+             alert("password must be filled out");
+              
+                      } 
+    	if (password.length < 6) {
+    		alert("Password should be minimum 6 charcter");
+    	}
+    }
+
+	</script>
+</head>
+<body>
+    <h2><u>sign up</u></h2>
+ <form>
+ 	<div>
+ 		<label for="name">Name:</label>
+ 		<input type="text" name="name" id="name" onblur="validateName()" required >
+ 	</div>
+ 	<br>
+ 	<div>
+ 		<label for="email">Email:</label>
+ 		<input type="text" name="email" id="email" onblur="validateEmail()" required  >
+ 	</div>
+ 	<br>
+ 	<div>
+ 		<label for="phone">Phone no:</label>
+ 		<input type="text" name="phone" id="phone" onblur="validatePhone()" required  >
+ 	</div>
+ 	<br>
+ 	<div>
+ 		<label for="password">Password:</label>
+ 		<input type="text" name="password" id="password" onblur="validatePassword()" required >
+ 	</div>
+ 	<br>
+ 	<div>
+ 		<input type="submit" value="Sign Up" id="submit">
+ 	</div>
+ </form>
+</body>
+</html>
